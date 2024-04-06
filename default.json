@@ -1,0 +1,38 @@
+{
+  "extends": [
+    "config:recommended",
+    ":pinVersions",
+    ":timezone(Europe/Paris)"
+  ],
+  "assignees": [
+    "baptistecdr"
+  ],
+  "git-submodules": {
+    "enabled": true
+  },
+  "terraform": {
+    "pinDigests": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "schedule": [
+      "before 7am on the first day of the month"
+    ]
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "pin",
+        "digest",
+        "pinDigest",
+        "minor",
+        "patch"
+      ],
+      "automerge": true,
+      "schedule": [
+        "before 7am"
+      ]
+    }
+  ]
+}
