@@ -33,6 +33,10 @@
       "schedule": [
         "before 7am"
       ]
+    },
+    {
+      "matchPackageNames": ["react", "react-dom"],
+      "groupName": "react packages"
     }
   ]
 }
