@@ -40,19 +40,6 @@
       ]
     },
     {
-      "description": "What gets deployed or runs in CI (images, Terraform providers, Actions, playbooks, submodules) is reviewed by hand, never merged unattended",
-      "matchManagers": [
-        "ansible",
-        "ansible-galaxy",
-        "docker-compose",
-        "dockerfile",
-        "git-submodules",
-        "github-actions",
-        "terraform"
-      ],
-      "automerge": false
-    },
-    {
       "description": "Update types without a release timestamp would wait forever for minimumReleaseAge",
       "matchUpdateTypes": [
         "bump",
