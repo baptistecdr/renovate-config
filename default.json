@@ -15,6 +15,9 @@
   },
   "minimumReleaseAge": "2 days",
   "osvVulnerabilityAlerts": true,
+  "postUpdateOptions": [
+    "gomodTidy"
+  ],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
