@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:recommended",
+    "config:best-practices",
     ":pinVersions",
     ":timezone(Europe/Paris)"
   ],
@@ -13,6 +13,11 @@
   "terraform": {
     "pinDigests": true
   },
+  "minimumReleaseAge": "2 days",
+  "osvVulnerabilityAlerts": true,
+  "postUpdateOptions": [
+    "gomodTidy"
+  ],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
@@ -33,6 +38,18 @@
       "schedule": [
         "before 7am"
       ]
+    },
+    {
+      "description": "Update types without a release timestamp would wait forever for minimumReleaseAge",
+      "matchUpdateTypes": [
+        "bump",
+        "lockFileMaintenance",
+        "lockfileUpdate",
+        "pin",
+        "replacement",
+        "rollback"
+      ],
+      "minimumReleaseAge": null
     },
     {
       "matchPackageNames": ["react", "react-dom"],
